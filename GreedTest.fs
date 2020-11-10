@@ -2,6 +2,7 @@
 open Greed
 open NUnit.Framework
 
+//specs: https://codingdojo.org/kata/Greed/
 
 [<TestCase(1, 100, TestName="One one score 100")>]
 [<TestCase(5, 50, TestName="One five score 50")>]
@@ -22,4 +23,10 @@ let ThreeOne_Should_Score1000 () =
 [<TestCase(6, 600)>]
 let ThreeSameDice_Should_ScoreDiceX100 (diceValue, expectedScore) =    
     let dices = [for i in 1..3 -> diceValue]
+    Assert.AreEqual(expectedScore, GreedScore(dices))
+
+[<TestCase(2, 400)>]
+[<TestCase(6, 1200)>]
+let FourSameDice_Should_ScoreDoubleDiceX100 (diceValue, expectedScore) =    
+    let dices = [for i in 1..4 -> diceValue]
     Assert.AreEqual(expectedScore, GreedScore(dices))
