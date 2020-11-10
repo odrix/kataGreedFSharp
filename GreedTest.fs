@@ -36,3 +36,10 @@ let FourSameDice_Should_ScoreDiceX200 (diceValue, expectedScore) =
 let FiveSameDice_Should_ScoreDiceX400 (diceValue, expectedScore) =    
     let dices = [for i in 1..5 -> diceValue]
     Assert.AreEqual(expectedScore, GreedScore(dices))
+
+[<TestCase(3, 2400)>]
+[<TestCase(4, 3200)>]
+[<TestCase(5, 4000)>]
+let SixSameDice_Should_ScoreDiceX800 (diceValue, expectedScore) =    
+    let dices = [for i in 1..6 -> diceValue]
+    Assert.AreEqual(expectedScore, GreedScore(dices))
