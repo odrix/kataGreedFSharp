@@ -27,12 +27,12 @@ let ThreeSameDice_Should_ScoreDiceX100 (diceValue, expectedScore) =
 
 [<TestCase(2, 400)>]
 [<TestCase(6, 1200)>]
-let FourSameDice_Should_ScoreDoubleDiceX100 (diceValue, expectedScore) =    
+let FourSameDice_Should_ScoreDiceX200 (diceValue, expectedScore) =    
     let dices = [for i in 1..4 -> diceValue]
     Assert.AreEqual(expectedScore, GreedScore(dices))
 
-[<TestCase(3, 900)>]
-[<TestCase(4, 1200)>]
-let FiveSameDice_Should_ScoreTripleDiceX100 (diceValue, expectedScore) =    
+[<TestCase(3, 1200)>]
+[<TestCase(4, 1600)>]
+let FiveSameDice_Should_ScoreDiceX400 (diceValue, expectedScore) =    
     let dices = [for i in 1..5 -> diceValue]
     Assert.AreEqual(expectedScore, GreedScore(dices))
